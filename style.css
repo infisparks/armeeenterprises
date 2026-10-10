@@ -809,8 +809,8 @@ button {
   box-shadow: 0 0 4px rgba(252, 211, 97, 0.5);
 }
 
-/* Mobile Hero Content - STRICTLY Constrained to Left Sky Column (<= 54% width)
-   Prevents ANY overlap or overflow into the skyscraper building! */
+/* Mobile Hero Content - Constrained to Left Sky Column
+   Allows ample breathing room for 1-line headline and 2-line description without touching the tower */
 .mobile-hero-body {
   position: relative;
   z-index: 5;
@@ -818,8 +818,8 @@ button {
   padding: 0 16px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  max-width: 54%;
+  gap: 12px;
+  max-width: 64%;
   margin-top: 24px;
   margin-bottom: auto;
 }
@@ -843,9 +843,9 @@ button {
 }
 
 .mobile-eyebrow-text {
-  font-size: 8px;
+  font-size: 8.5px;
   font-weight: 700;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.3px;
   text-transform: uppercase;
   background: linear-gradient(90deg, #FFFCEB 0%, #FCD361 50%, #E5A42D 100%);
   -webkit-background-clip: text;
@@ -855,17 +855,17 @@ button {
   line-height: 1;
 }
 
-/* Mobile Headline: Single line with increased font size and luxury serif aesthetic */
+/* Mobile Headline: Single line with significantly increased luxury serif font size */
 .mobile-headline {
   font-family: var(--font-serif);
-  font-size: clamp(26px, 7.4vw, 33px);
-  line-height: 1.08;
+  font-size: clamp(30px, 8.6vw, 38px);
+  line-height: 1.05;
   font-weight: 700;
-  letter-spacing: -0.4px;
+  letter-spacing: -0.5px;
   margin: 0;
   display: flex;
   align-items: baseline;
-  gap: 7px;
+  gap: 8px;
   white-space: nowrap;
 }
 
@@ -881,18 +881,20 @@ button {
   filter: drop-shadow(0 3px 14px rgba(244, 188, 64, 0.45)) drop-shadow(0 4px 20px rgba(0, 0, 0, 0.8));
 }
 
-/* Mobile Description - Strictly 2 Lines */
+/* Mobile Description - STRICTLY Guaranteed Exactly 2 Lines on Any Screen */
 .mobile-desc {
-  font-size: clamp(9.5px, 2.8vw, 11px);
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.86);
+  font-size: clamp(10px, 2.9vw, 11.5px);
+  line-height: 1.48;
+  color: rgba(255, 255, 255, 0.88);
   font-weight: 400;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.85);
   letter-spacing: 0.1px;
   margin: 0;
   display: flex;
   flex-direction: column;
   gap: 2px;
+  width: max-content;
+  max-width: 100%;
 }
 
 .mobile-desc .desc-line {
