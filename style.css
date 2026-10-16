@@ -2409,18 +2409,22 @@ html {
   justify-content: space-between;
   margin-bottom: 20px;
   gap: 12px;
+  width: 100%;
 }
 
 .project-badge-tag {
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
   color: #FCD361;
   background: rgba(212, 160, 23, 0.12);
   border: 1px solid rgba(212, 160, 23, 0.4);
   padding: 5px 12px;
   border-radius: 100px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  line-height: 1.2;
 }
 
 .project-timeline-pill {
@@ -2431,6 +2435,9 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.14);
   padding: 4px 12px;
   border-radius: 100px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  line-height: 1.2;
 }
 
 .project-name {
@@ -3270,6 +3277,35 @@ html {
     gap: 16px;
     text-align: center;
   }
+
+  /* Project Card Badges in 1 Single Row on Mobile */
+  .project-showcase-card {
+    padding: 28px 18px;
+  }
+  .project-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  .project-badge-tag {
+    font-size: 10px;
+    letter-spacing: 0.6px;
+    padding: 4px 9px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    line-height: 1.2;
+  }
+  .project-timeline-pill {
+    font-size: 10.5px;
+    padding: 4px 9px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    line-height: 1.2;
+  }
 }
 
 /* Tablet & Mobile Badge Arrangement: 2 in row 1, 1 centered in row 2 */
@@ -3333,5 +3369,21 @@ html {
   }
   .info-card-luxury {
     padding: 28px 20px;
+  }
+  .project-showcase-card {
+    padding: 24px 14px;
+  }
+  .project-card-header {
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .project-badge-tag {
+    font-size: 9px;
+    letter-spacing: 0.4px;
+    padding: 3.5px 7px;
+  }
+  .project-timeline-pill {
+    font-size: 9.5px;
+    padding: 3.5px 7px;
   }
 }
