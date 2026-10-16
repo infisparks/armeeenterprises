@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
 
@@ -568,25 +568,42 @@
               Shaping Skylines from Bandra West, Mumbai
             </div>
             <div class="about-paragraphs">
-              <p>
+              <p class="about-p-lead">
                 Based in Bandra West, Mumbai, Armee Enterprises represents the next chapter in a construction legacy built on decades of industry experience, entrepreneurial vision, and a commitment to excellence.
               </p>
-              <p>
-                An extension of Noori Construction, with a presence in the construction industry since 1987, Armee Enterprises combines the strength of an established legacy with a forward-looking approach to construction and project execution.
-              </p>
+              
+              <div class="about-p-collapse" id="aboutExtraText">
+                <p>
+                  An extension of Noori Construction, with a presence in the construction industry since 1987, Armee Enterprises combines the strength of an established legacy with a forward-looking approach to construction and project execution.
+                </p>
+              </div>
+
+              <!-- Read More Button for Mobile Screens -->
+              <button type="button" class="about-readmore-btn" id="aboutReadMoreBtn" aria-expanded="false" aria-controls="aboutExtraText">
+                <span class="readmore-text">Read More</span>
+                <svg class="readmore-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+              </button>
             </div>
+
+            <!-- Badges Structure: 2 columns in row 1, 1 centered in row 2 on mobile -->
             <div class="about-badges-row">
-              <div class="about-badge-item">
-                <span class="badge-dot"></span>
-                <span>Bandra West Headquarters</span>
-              </div>
-              <div class="about-badge-item">
-                <span class="badge-dot"></span>
-                <span>Noori Construction Extension</span>
-              </div>
-              <div class="about-badge-item">
-                <span class="badge-dot"></span>
-                <span>Modern Execution Standards</span>
+              <div class="about-badges-grid">
+                <div class="about-badge-item badge-item-1">
+                  <span class="badge-dot"></span>
+                  <span class="badge-text-desktop">Bandra West Headquarters</span>
+                  <span class="badge-text-mobile">Bandra West HQ</span>
+                </div>
+                <div class="about-badge-item badge-item-2">
+                  <span class="badge-dot"></span>
+                  <span class="badge-text-desktop">Noori Construction Extension</span>
+                  <span class="badge-text-mobile">Noori Extension</span>
+                </div>
+                <div class="about-badge-item badge-item-center">
+                  <span class="badge-dot"></span>
+                  <span>Modern Execution Standards</span>
+                </div>
               </div>
             </div>
           </div>

@@ -1749,18 +1749,41 @@ html {
   text-shadow: 0 0 12px rgba(252, 211, 97, 0.3);
 }
 
+.about-paragraphs {
+  margin-bottom: 24px;
+}
+
 .about-paragraphs p {
   font-size: 15.5px;
   line-height: 1.75;
   color: #94A3B8;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
+}
+
+.about-p-collapse {
+  display: block;
+}
+
+.about-readmore-btn {
+  display: none;
 }
 
 .about-badges-row {
+  margin-top: 24px;
+}
+
+.about-badges-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 30px;
+}
+
+.badge-text-desktop {
+  display: inline;
+}
+
+.badge-text-mobile {
+  display: none;
 }
 
 .about-badge-item {
@@ -2878,6 +2901,48 @@ html {
     width: 100%;
     padding: 16px 24px;
   }
+  /* About Section Mobile Optimizations: 1 Paragraph + Read More */
+  .about-paragraphs {
+    margin-bottom: 16px;
+  }
+  .about-p-lead {
+    margin-bottom: 6px;
+  }
+  .about-p-collapse {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease;
+  }
+  .about-p-collapse.is-open {
+    max-height: 320px;
+    opacity: 1;
+    margin-top: 10px;
+  }
+  .about-readmore-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    padding: 6px 0;
+    color: var(--gold-bright);
+    font-size: 13.5px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: color 0.2s;
+    margin-bottom: 8px;
+  }
+  .about-readmore-btn:hover {
+    color: #FFFCEB;
+  }
+  .about-readmore-btn .readmore-icon {
+    transition: transform 0.3s ease;
+  }
+  .about-readmore-btn.is-expanded .readmore-icon {
+    transform: rotate(180deg);
+  }
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -2886,6 +2951,42 @@ html {
     flex-direction: column;
     gap: 16px;
     text-align: center;
+  }
+}
+
+/* Tablet & Mobile Badge Arrangement: 2 in row 1, 1 centered in row 2 */
+@media (max-width: 640px) {
+  .about-badges-row {
+    margin-top: 18px;
+    width: 100%;
+  }
+  .about-badges-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+  .badge-text-desktop {
+    display: none !important;
+  }
+  .badge-text-mobile {
+    display: inline !important;
+  }
+  .about-badge-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 10px;
+    font-size: 11.5px;
+    white-space: nowrap;
+    text-align: center;
+    letter-spacing: 0.2px;
+  }
+  .about-badge-item.badge-item-center {
+    grid-column: 1 / -1;
+    justify-self: center;
+    max-width: fit-content;
+    padding: 8px 18px;
   }
 }
 

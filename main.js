@@ -152,6 +152,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Handle About Section "Read More" Toggle on Mobile
+  const aboutReadMoreBtn = document.getElementById('aboutReadMoreBtn');
+  const aboutExtraText = document.getElementById('aboutExtraText');
+  if (aboutReadMoreBtn && aboutExtraText) {
+    aboutReadMoreBtn.addEventListener('click', () => {
+      const isExpanded = aboutExtraText.classList.toggle('is-open');
+      aboutReadMoreBtn.classList.toggle('is-expanded', isExpanded);
+      aboutReadMoreBtn.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+      const textSpan = aboutReadMoreBtn.querySelector('.readmore-text');
+      if (textSpan) {
+        textSpan.textContent = isExpanded ? 'Read Less' : 'Read More';
+      }
+    });
+  }
+
   // Navigation Active State on Scroll
   const navSections = document.querySelectorAll('section[id], header[id]');
   const desktopNavItems = document.querySelectorAll('.desktop-nav-links .nav-item');
