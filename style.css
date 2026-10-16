@@ -1304,8 +1304,8 @@ html {
 
 .site-main-content {
   position: relative;
-  background-color: #FFFFFF;
-  color: #111827;
+  background-color: #060911;
+  color: #FFFFFF;
   overflow: hidden;
 }
 
@@ -1316,47 +1316,11 @@ html {
   padding: 0 32px;
 }
 
-/* Reusable Typography & Eyebrows on Light Background */
-
 /* ==========================================================================
-   EXCLUSIVE NOIR OBSIDIAN & 24K GOLD LUXURY SECTIONS
+   EXCLUSIVE NOIR OBSIDIAN & 24K GOLD LUXURY DESIGN SYSTEM
    ========================================================================== */
 .dark-section {
   color: #FFFFFF;
-}
-
-.dark-section .section-heading {
-  color: #FFFFFF;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
-}
-
-.dark-section .section-lead-paragraph {
-  color: #94A3B8;
-}
-
-.dark-section .eyebrow-caption {
-  color: var(--gold-bright);
-  text-shadow: 0 0 14px rgba(252, 211, 97, 0.45);
-}
-
-.dark-section .eyebrow-accent-bar {
-  background: var(--gold-bar-gradient);
-  box-shadow: 0 0 10px rgba(243, 186, 66, 0.5);
-}
-
-.dark-section .text-gold-gradient {
-  background: var(--gold-text-metallic);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
-  filter: drop-shadow(0 2px 8px rgba(243, 186, 66, 0.3));
-}
-
-.text-gold-gradient {
-  background: linear-gradient(135deg, #92400E 0%, #B45309 35%, #D97706 70%, #78350F 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
 }
 
 .section-eyebrow {
@@ -1374,26 +1338,37 @@ html {
 .eyebrow-accent-bar {
   width: 28px;
   height: 2px;
-  background: linear-gradient(90deg, #D97706 0%, #B45309 100%);
+  background: var(--gold-bar-gradient);
+  box-shadow: 0 0 10px rgba(243, 186, 66, 0.5);
   border-radius: 2px;
 }
 
 .eyebrow-caption {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   letter-spacing: 2.2px;
   text-transform: uppercase;
-  color: #B45309;
+  color: var(--gold-bright);
+  text-shadow: 0 0 12px rgba(252, 211, 97, 0.45);
 }
 
 .section-heading {
   font-family: var(--font-serif);
-  font-size: 40px;
+  font-size: 42px;
   font-weight: 700;
-  line-height: 1.22;
-  color: #111827;
+  line-height: 1.2;
+  color: #FFFFFF;
   margin-bottom: 16px;
   letter-spacing: -0.5px;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.6);
+}
+
+.text-gold-gradient {
+  background: var(--gold-text-metallic);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  filter: drop-shadow(0 2px 8px rgba(243, 186, 66, 0.35));
 }
 
 .section-header-centered {
@@ -1404,33 +1379,8 @@ html {
 
 .section-lead-paragraph {
   font-size: 16px;
-  line-height: 1.7;
-  color: #4B5563;
-}
-
-/* Secondary Outline Button (Light Theme) */
-.btn-secondary-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 13px 28px;
-  border-radius: 100px;
-  border: 1.5px solid #D1D5DB;
-  background: #FFFFFF;
-  color: #1F2937;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-  transition: all var(--transition-smooth);
-}
-
-.btn-secondary-outline:hover {
-  background: #FFFBEB;
-  border-color: #D97706;
-  color: #B45309;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(217, 119, 6, 0.15);
+  line-height: 1.75;
+  color: #94A3B8;
 }
 
 /* --------------------------------------------------------------------------
