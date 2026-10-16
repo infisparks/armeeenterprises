@@ -1469,6 +1469,8 @@ html {
   box-shadow: 0 0 16px rgba(212, 160, 23, 0.14);
   margin-bottom: 22px;
   backdrop-filter: blur(8px);
+  white-space: nowrap;
+  max-width: 100%;
 }
 
 .badge-dot-pulse {
@@ -1821,13 +1823,26 @@ html {
 /* Quote Card Luxury in Dark Obsidian */
 .quote-card-luxury {
   position: relative;
-  background: linear-gradient(150deg, rgba(255, 255, 255, 0.05) 0%, rgba(15, 23, 42, 0.85) 100%);
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.05) 0%, rgba(15, 23, 42, 0.88) 100%);
   border: 1.5px solid rgba(212, 160, 23, 0.35);
   border-radius: 22px;
   padding: 44px 38px 36px;
   box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), 0 0 24px rgba(212, 160, 23, 0.12);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+  overflow: hidden;
+}
+
+.quote-card-bg-image {
+  position: absolute;
+  inset: 0;
+  background-image: url('mobile_bg_hero.png');
+  background-size: cover;
+  background-position: center bottom;
+  opacity: 0.14;
+  filter: contrast(130%) brightness(75%);
+  pointer-events: none;
+  mix-blend-mode: luminosity;
 }
 
 .quote-mark {
@@ -2940,9 +2955,59 @@ html {
   .about-readmore-btn .readmore-icon {
     transition: transform 0.3s ease;
   }
-  .about-readmore-btn.is-expanded .readmore-icon {
-    transform: rotate(180deg);
+  /* Legacy Badge Single Row on Mobile */
+  .legacy-badge-tag {
+    padding: 5px 12px;
+    margin-bottom: 16px;
+    max-width: 100%;
+    width: fit-content;
+    white-space: nowrap;
   }
+  .legacy-badge-tag .eyebrow-caption {
+    font-size: 10px;
+    letter-spacing: 1.1px;
+    white-space: nowrap;
+  }
+
+  /* Metric Number scaling for "Since 1987" */
+  .metric-card-dark .metric-number {
+    font-size: clamp(20px, 4.8vw, 24px);
+    white-space: nowrap;
+  }
+
+  /* Quote Card Mobile Space Reduction & Premium Refinement */
+  .quote-card-luxury {
+    padding: 24px 20px 20px;
+    border-radius: 18px;
+    margin-top: 10px;
+  }
+  .quote-mark {
+    font-size: 38px;
+    line-height: 0.6;
+    margin-bottom: 8px;
+  }
+  .quote-text {
+    font-size: 14px;
+    line-height: 1.55;
+    margin-bottom: 16px;
+  }
+  .quote-author-signature {
+    padding-top: 14px;
+    gap: 12px;
+  }
+  .author-avatar-crest {
+    width: 38px;
+    height: 38px;
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+  .author-title {
+    font-size: 13px;
+  }
+  .author-subtitle {
+    font-size: 11px;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 32px;

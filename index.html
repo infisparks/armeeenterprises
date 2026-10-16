@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
 
@@ -440,7 +440,8 @@
           <div class="legacy-intro-text">
             <div class="legacy-badge-tag">
               <span class="badge-dot-pulse"></span>
-              <span class="eyebrow-caption">Decades of Legacy • A New Era of Execution</span>
+              <span class="eyebrow-caption badge-text-desktop">Decades of Legacy • A New Era of Execution</span>
+              <span class="eyebrow-caption badge-text-mobile">Decades of Legacy • New Era</span>
             </div>
             
             <h2 class="legacy-main-title">
@@ -499,7 +500,7 @@
                 </svg>
               </div>
               <div class="metric-value-wrap">
-                <span class="metric-number">Since '87</span>
+                <span class="metric-number">Since 1987</span>
               </div>
               <div class="metric-label">Construction Heritage</div>
               <div class="metric-subdetail">37+ Years Mumbai Experience</div>
@@ -610,6 +611,7 @@
 
           <div class="about-quote-column">
             <div class="quote-card-luxury">
+              <div class="quote-card-bg-image" aria-hidden="true"></div>
               <div class="quote-mark" aria-hidden="true">“</div>
               <blockquote class="quote-text">
                 For us, construction is more than the creation of buildings. It is about transforming vision into reality, delivering on commitments, and building structures that stand as a testament to the people and purpose behind them.
@@ -720,111 +722,136 @@
           </p>
         </div>
 
-        <div class="leadership-grid">
-          <!-- Member 1: Farid Zariwala -->
-          <article class="leader-card leader-card-director">
-            <div class="leader-card-header">
-              <div class="leader-monogram">FZ</div>
-              <div class="leader-badge-pill">Director • 32+ Yrs Experience</div>
-            </div>
-            <div class="leader-card-body">
-              <h3 class="leader-name">Farid Zariwala</h3>
-              <div class="leader-role">Director</div>
-              <p class="leader-bio">
-                With over 32 years of experience in the construction industry, Farid Zariwala brings seasoned leadership, extensive industry knowledge, and practical expertise. Providing strategic direction grounded in years of experience and an understanding of Mumbai's construction sector complexities.
-              </p>
-            </div>
-          </article>
+        <!-- Mobile Scroll Indicator Hint -->
+        <div class="leadership-mobile-hint">
+          <span class="hint-icon">⟷</span> Swipe to explore all members
+        </div>
 
-          <!-- Member 2: Capt. Faisal Khan -->
-          <article class="leader-card leader-card-director">
-            <div class="leader-card-header">
-              <div class="leader-monogram">FK</div>
-              <div class="leader-badge-pill">Director • Strategic Vision</div>
-            </div>
-            <div class="leader-card-body">
-              <h3 class="leader-name">Capt. Faisal Khan</h3>
-              <div class="leader-role">Director</div>
-              <p class="leader-bio">
-                A distinguished businessman with investments across diverse business sectors, bringing a broad commercial perspective and an entrepreneurial approach to leadership, supporting growth opportunities and sound decision-making.
-              </p>
-            </div>
-          </article>
+        <!-- Tier 1: Board of Directors (3 Cards in Row 1 on PC) -->
+        <div class="leadership-tier-group">
+          <div class="tier-label-header">
+            <span class="tier-eyebrow-accent"></span>
+            <span class="tier-title">Board of Directors</span>
+            <span class="tier-eyebrow-accent"></span>
+          </div>
 
-          <!-- Member 3: Jalal Khan -->
-          <article class="leader-card leader-card-director">
-            <div class="leader-card-header">
-              <div class="leader-monogram">JK</div>
-              <div class="leader-badge-pill">Director • Business & Construction</div>
-            </div>
-            <div class="leader-card-body">
-              <h3 class="leader-name">Jalal Khan</h3>
-              <div class="leader-role">Director</div>
-              <p class="leader-bio">
-                An entrepreneur with experience in both business and construction, bringing a practical understanding of industry dynamics and project development to drive business development and effective execution.
-              </p>
-            </div>
-          </article>
+          <div class="leadership-row leadership-directors-row">
+            <!-- Member 1: Farid Zariwala -->
+            <article class="leader-card leader-card-director">
+              <div class="leader-card-header">
+                <div class="leader-monogram">FZ</div>
+                <div class="leader-badge-pill">Director • 32+ Yrs Experience</div>
+              </div>
+              <div class="leader-card-body">
+                <h3 class="leader-name">Farid Zariwala</h3>
+                <div class="leader-role">Director</div>
+                <p class="leader-bio">
+                  With over 32 years of experience in the construction industry, Farid Zariwala brings seasoned leadership, extensive industry knowledge, and practical expertise. Providing strategic direction grounded in years of experience and an understanding of Mumbai's construction sector complexities.
+                </p>
+              </div>
+            </article>
 
-          <!-- Member 4: Meraj Zariwala -->
-          <article class="leader-card">
-            <div class="leader-card-header">
-              <div class="leader-monogram">MZ</div>
-              <div class="leader-badge-pill">Next-Gen Leadership</div>
-            </div>
-            <div class="leader-card-body">
-              <h3 class="leader-name">Meraj Zariwala</h3>
-              <div class="leader-role">Project Manager | CEO, Noori Group</div>
-              <p class="leader-bio">
-                Representing next-generation leadership, combining an entrepreneurial mindset with modern management practices to focus on execution planning, interdepartmental coordination, and delivering ambitious timelines.
-              </p>
-            </div>
-          </article>
+            <!-- Member 2: Capt. Faisal Khan -->
+            <article class="leader-card leader-card-director">
+              <div class="leader-card-header">
+                <div class="leader-monogram">FK</div>
+                <div class="leader-badge-pill">Director • Strategic Vision</div>
+              </div>
+              <div class="leader-card-body">
+                <h3 class="leader-name">Capt. Faisal Khan</h3>
+                <div class="leader-role">Director</div>
+                <p class="leader-bio">
+                  A distinguished businessman with investments across diverse business sectors, bringing a broad commercial perspective and an entrepreneurial approach to leadership, supporting growth opportunities and sound decision-making.
+                </p>
+              </div>
+            </article>
 
-          <!-- Member 5: Dahniyal Khan -->
-          <article class="leader-card">
-            <div class="leader-card-header">
-              <div class="leader-monogram">DK</div>
-              <div class="leader-badge-pill">Procurement Operations</div>
-            </div>
-            <div class="leader-card-body">
-              <h3 class="leader-name">Dahniyal Khan</h3>
-              <div class="leader-role">Purchase Manager</div>
-              <p class="leader-bio">
-                Dynamic and proactive, bringing energy and a solutions-oriented mindset to procurement operations, ensuring timely material sourcing and cost-conscious purchasing decisions.
-              </p>
-            </div>
-          </article>
+            <!-- Member 3: Jalal Khan -->
+            <article class="leader-card leader-card-director">
+              <div class="leader-card-header">
+                <div class="leader-monogram">JK</div>
+                <div class="leader-badge-pill">Director • Business &amp; Construction</div>
+              </div>
+              <div class="leader-card-body">
+                <h3 class="leader-name">Jalal Khan</h3>
+                <div class="leader-role">Director</div>
+                <p class="leader-bio">
+                  An entrepreneur with experience in both business and construction, bringing a practical understanding of industry dynamics and project development to drive business development and effective execution.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
 
-          <!-- Member 6: Sarfaraz Merchant -->
-          <article class="leader-card">
-            <div class="leader-card-header">
-              <div class="leader-monogram">SM</div>
-              <div class="leader-badge-pill">Commercial Negotiation</div>
-            </div>
-            <div class="leader-card-body">
-              <h3 class="leader-name">Sarfaraz Merchant</h3>
-              <div class="leader-role">Purchase Manager</div>
-              <p class="leader-bio">
-                Combining commercial awareness with a sharp approach to supplier negotiations, assessing costs, and focusing on value to support procurement efficiency and project requirements.
-              </p>
-            </div>
-          </article>
+        <!-- Tier 2: Senior Management & Project Execution (4 Cards in Row 2 on PC) -->
+        <div class="leadership-tier-group">
+          <div class="tier-label-header">
+            <span class="tier-eyebrow-accent"></span>
+            <span class="tier-title">Senior Management &amp; Operations</span>
+            <span class="tier-eyebrow-accent"></span>
+          </div>
 
-          <!-- Member 7: Ziyad Khan -->
-          <article class="leader-card">
-            <div class="leader-card-header">
-              <div class="leader-monogram">ZK</div>
-              <div class="leader-badge-pill">Operations & Site</div>
-            </div>
-            <div class="leader-card-body">
-              <h3 class="leader-name">Ziyad Khan</h3>
-              <div class="leader-role">Operations Manager</div>
-              <p class="leader-bio">
-                Young, dedicated, and focused, bringing a hands-on approach to operational management, aligning site activities, teams, and day-to-day efficiency to keep execution organised.
-              </p>
-            </div>
-          </article>
+          <div class="leadership-row leadership-management-row">
+            <!-- Member 4: Meraj Zariwala -->
+            <article class="leader-card">
+              <div class="leader-card-header">
+                <div class="leader-monogram">MZ</div>
+                <div class="leader-badge-pill">Next-Gen Leadership</div>
+              </div>
+              <div class="leader-card-body">
+                <h3 class="leader-name">Meraj Zariwala</h3>
+                <div class="leader-role">Project Manager | CEO, Noori Group</div>
+                <p class="leader-bio">
+                  Representing next-generation leadership, combining an entrepreneurial mindset with modern management practices to focus on execution planning, interdepartmental coordination, and delivering ambitious timelines.
+                </p>
+              </div>
+            </article>
+
+            <!-- Member 5: Dahniyal Khan -->
+            <article class="leader-card">
+              <div class="leader-card-header">
+                <div class="leader-monogram">DK</div>
+                <div class="leader-badge-pill">Procurement Operations</div>
+              </div>
+              <div class="leader-card-body">
+                <h3 class="leader-name">Dahniyal Khan</h3>
+                <div class="leader-role">Purchase Manager</div>
+                <p class="leader-bio">
+                  Dynamic and proactive, bringing energy and a solutions-oriented mindset to procurement operations, ensuring timely material sourcing and cost-conscious purchasing decisions.
+                </p>
+              </div>
+            </article>
+
+            <!-- Member 6: Sarfaraz Merchant -->
+            <article class="leader-card">
+              <div class="leader-card-header">
+                <div class="leader-monogram">SM</div>
+                <div class="leader-badge-pill">Commercial Negotiation</div>
+              </div>
+              <div class="leader-card-body">
+                <h3 class="leader-name">Sarfaraz Merchant</h3>
+                <div class="leader-role">Purchase Manager</div>
+                <p class="leader-bio">
+                  Combining commercial awareness with a sharp approach to supplier negotiations, assessing costs, and focusing on value to support procurement efficiency and project requirements.
+                </p>
+              </div>
+            </article>
+
+            <!-- Member 7: Ziyad Khan -->
+            <article class="leader-card">
+              <div class="leader-card-header">
+                <div class="leader-monogram">ZK</div>
+                <div class="leader-badge-pill">Operations &amp; Site</div>
+              </div>
+              <div class="leader-card-body">
+                <h3 class="leader-name">Ziyad Khan</h3>
+                <div class="leader-role">Operations Manager</div>
+                <p class="leader-bio">
+                  Young, dedicated, and focused, bringing a hands-on approach to operational management, aligning site activities, teams, and day-to-day efficiency to keep execution organised.
+                </p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -1080,20 +1107,26 @@
                     <input type="text" id="contactFullName" class="form-input" placeholder="e.g. Rahul Sharma" required>
                   </div>
                   <div class="form-group">
-                    <label class="form-label" for="contactEmail">Email Address <span class="required-star">*</span></label>
-                    <input type="email" id="contactEmail" class="form-input" placeholder="name@domain.com" required>
+                    <label class="form-label" for="contactPhone">Phone Number <span class="required-star">*</span></label>
+                    <input type="tel" id="contactPhone" class="form-input" placeholder="+91 98765 43210" required>
                   </div>
                 </div>
 
-                <div class="form-group">
-                  <label class="form-label" for="contactInquiryType">Inquiry Type <span class="required-star">*</span></label>
-                  <select id="contactInquiryType" class="form-input form-select" required>
-                    <option value="" disabled selected>Select Inquiry Type</option>
-                    <option value="High-Rise Construction">High-Rise Construction</option>
-                    <option value="Partnership">Partnership</option>
-                    <option value="Project Consultation">Project Consultation</option>
-                    <option value="General Inquiry">General Inquiry</option>
-                  </select>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="contactEmail">Email Address <span class="required-star">*</span></label>
+                    <input type="email" id="contactEmail" class="form-input" placeholder="name@domain.com" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="contactInquiryType">Inquiry Type <span class="required-star">*</span></label>
+                    <select id="contactInquiryType" class="form-input form-select" required>
+                      <option value="" disabled selected>Select Inquiry Type</option>
+                      <option value="High-Rise Construction">High-Rise Construction</option>
+                      <option value="Partnership">Partnership</option>
+                      <option value="Project Consultation">Project Consultation</option>
+                      <option value="General Inquiry">General Inquiry</option>
+                    </select>
+                  </div>
                 </div>
 
                 <div class="form-group">
@@ -1102,7 +1135,7 @@
                 </div>
 
                 <button type="submit" class="contact-submit-btn">
-                  <span>Submit Inquiry</span>
+                  <span>Submit Inquiry &amp; Chat on WhatsApp</span>
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                     <polyline points="12 5 19 12 12 19"></polyline>
@@ -1310,26 +1343,26 @@
 
       <form class="enquiry-form" id="enquiryForm">
         <div class="form-group">
-          <label class="form-label">Full Name <span>*</span></label>
-          <input type="text" class="form-input" placeholder="e.g. Rahul Sharma" required>
+          <label class="form-label" for="enquiryFullName">Full Name <span>*</span></label>
+          <input type="text" id="enquiryFullName" class="form-input" placeholder="e.g. Rahul Sharma" required>
         </div>
 
         <div class="form-group">
-          <label class="form-label">Phone Number <span>*</span></label>
-          <input type="tel" class="form-input" placeholder="+91 98765 43210" required>
+          <label class="form-label" for="enquiryPhone">Phone Number <span>*</span></label>
+          <input type="tel" id="enquiryPhone" class="form-input" placeholder="+91 98765 43210" required>
         </div>
 
         <div class="form-group">
-          <label class="form-label">Email Address <span>*</span></label>
-          <input type="email" class="form-input" placeholder="name@domain.com" required>
+          <label class="form-label" for="enquiryEmail">Email Address <span>*</span></label>
+          <input type="email" id="enquiryEmail" class="form-input" placeholder="name@domain.com" required>
         </div>
 
         <div class="form-group">
-          <label class="form-label">Configuration Preference</label>
-          <input type="text" class="form-input" placeholder="1 BHK / 2 BHK / Commercial">
+          <label class="form-label" for="enquiryConfig">Configuration Preference</label>
+          <input type="text" id="enquiryConfig" class="form-input" placeholder="1 BHK / 2 BHK / Commercial">
         </div>
 
-        <button type="submit" class="form-submit-btn">Submit Enquiry</button>
+        <button type="submit" class="form-submit-btn">Submit Enquiry &amp; Chat on WhatsApp</button>
       </form>
     </div>
   </div>

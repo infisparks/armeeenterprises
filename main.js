@@ -112,27 +112,53 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Handle Enquiry Modal Form Submission
+  const WHATSAPP_NUMBER = '917021466707';
+
+  function redirectToWhatsApp(messageText) {
+    const encoded = encodeURIComponent(messageText);
+    const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encoded}`;
+    const win = window.open(whatsappUrl, '_blank');
+    if (!win || win.closed || typeof win.closed === 'undefined') {
+      window.location.href = whatsappUrl;
+    }
+  }
+
+  // Handle Enquiry Modal Form Submission -> WhatsApp
   const enquiryForm = document.getElementById('enquiryForm');
   if (enquiryForm) {
     enquiryForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const submitBtn = enquiryForm.querySelector('.form-submit-btn');
       const originalText = submitBtn.textContent;
-      submitBtn.textContent = 'Submitting Request...';
+      submitBtn.textContent = 'Connecting to WhatsApp...';
       submitBtn.disabled = true;
 
+      const name = document.getElementById('enquiryFullName')?.value.trim() || 'Not specified';
+      const phone = document.getElementById('enquiryPhone')?.value.trim() || 'Not specified';
+      const email = document.getElementById('enquiryEmail')?.value.trim() || 'Not specified';
+      const config = document.getElementById('enquiryConfig')?.value.trim() || 'Not specified';
+
+      const waMessage = 
+`*New Enquiry - Armee Enterprises (Noori Horizon)*
+━━━━━━━━━━━━━━━━━━━━
+👤 *Name:* ${name}
+📞 *Phone:* ${phone}
+✉️ *Email:* ${email}
+🏢 *Preference:* ${config}
+━━━━━━━━━━━━━━━━━━━━
+_Submitted via website form_`;
+
       setTimeout(() => {
-        alert('Thank you for your enquiry. Our luxury property advisor will contact you shortly.');
+        redirectToWhatsApp(waMessage);
         enquiryForm.reset();
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
         closeModal(enquiryModal);
-      }, 1000);
+      }, 350);
     });
   }
 
-  // Handle Contact Section Form Submission
+  // Handle Contact Section Form Submission -> WhatsApp
   const contactSectionForm = document.getElementById('contactSectionForm');
   if (contactSectionForm) {
     contactSectionForm.addEventListener('submit', (e) => {
@@ -140,15 +166,33 @@ document.addEventListener('DOMContentLoaded', () => {
       const submitBtn = contactSectionForm.querySelector('.contact-submit-btn');
       const btnSpan = submitBtn.querySelector('span');
       const originalText = btnSpan ? btnSpan.textContent : submitBtn.textContent;
-      if (btnSpan) btnSpan.textContent = 'Sending Inquiry...';
+      if (btnSpan) btnSpan.textContent = 'Connecting to WhatsApp...';
       submitBtn.disabled = true;
 
+      const name = document.getElementById('contactFullName')?.value.trim() || 'Not specified';
+      const phone = document.getElementById('contactPhone')?.value.trim() || 'Not specified';
+      const email = document.getElementById('contactEmail')?.value.trim() || 'Not specified';
+      const inquiryType = document.getElementById('contactInquiryType')?.value.trim() || 'General Inquiry';
+      const message = document.getElementById('contactMessage')?.value.trim() || 'None provided';
+
+      const waMessage = 
+`*New Corporate Inquiry - Armee Enterprises*
+━━━━━━━━━━━━━━━━━━━━
+👤 *Name:* ${name}
+📞 *Phone:* ${phone}
+✉️ *Email:* ${email}
+📋 *Inquiry Type:* ${inquiryType}
+💬 *Message:*
+${message}
+━━━━━━━━━━━━━━━━━━━━
+_Submitted via website form_`;
+
       setTimeout(() => {
-        alert('Thank you for contacting Armee Enterprises. Our management team will review your inquiry and connect with you promptly.');
+        redirectToWhatsApp(waMessage);
         contactSectionForm.reset();
         if (btnSpan) btnSpan.textContent = originalText;
         submitBtn.disabled = false;
-      }, 900);
+      }, 350);
     });
   }
 
