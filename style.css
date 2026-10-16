@@ -2024,10 +2024,65 @@ html {
   overflow: hidden;
 }
 
-.leadership-grid {
+.leadership-tier-group {
+  margin-bottom: 56px;
+  position: relative;
+}
+
+.leadership-tier-group:last-child {
+  margin-bottom: 0;
+}
+
+.tier-label-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.tier-eyebrow-accent {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(243, 186, 66, 0.7), transparent);
+}
+
+.tier-title {
+  font-family: var(--font-cinzel, 'Cinzel', serif);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #FCD361;
+  text-shadow: 0 0 14px rgba(243, 186, 66, 0.25);
+}
+
+.tier-count-pill {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 12px;
+  border-radius: 100px;
+  background: rgba(243, 186, 66, 0.1);
+  border: 1px solid rgba(243, 186, 66, 0.32);
+  color: #FCD361;
+  letter-spacing: 0.5px;
+}
+
+/* PC Desktop: EXACTLY 2 BALANCED ROWS */
+/* Row 1: Board of Directors (3 Cards) */
+.leadership-directors-row {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 26px;
+  align-items: stretch;
+}
+
+/* Row 2: Senior Management & Operations (4 Cards) */
+.leadership-management-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: stretch;
 }
 
 .leader-card {
@@ -2036,23 +2091,30 @@ html {
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(212, 160, 23, 0.22);
   border-radius: 18px;
-  padding: 32px 24px;
+  padding: 30px 24px;
   display: flex;
   flex-direction: column;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
-  transition: all var(--transition-smooth);
+  transition: transform 0.35s cubic-bezier(0.2, 0, 0, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+  height: 100%;
 }
 
 .leader-card:hover {
   transform: translateY(-6px);
-  border-color: rgba(243, 186, 66, 0.65);
-  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), 0 0 24px rgba(212, 160, 23, 0.2);
+  border-color: rgba(243, 186, 66, 0.7);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), 0 0 24px rgba(212, 160, 23, 0.22);
 }
 
 .leader-card-director {
-  background: linear-gradient(150deg, rgba(255, 255, 255, 0.06) 0%, rgba(15, 23, 42, 0.9) 100%);
-  border: 1.5px solid rgba(243, 186, 66, 0.4);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 160, 23, 0.12);
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.06) 0%, rgba(15, 23, 42, 0.92) 100%);
+  border: 1.5px solid rgba(243, 186, 66, 0.42);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 22px rgba(212, 160, 23, 0.14);
+  padding: 34px 28px;
+}
+
+.leader-card-director:hover {
+  border-color: rgba(253, 224, 71, 0.85);
+  box-shadow: 0 24px 52px rgba(0, 0, 0, 0.6), 0 0 32px rgba(243, 186, 66, 0.3);
 }
 
 .leader-card-header {
@@ -2066,17 +2128,27 @@ html {
 .leader-monogram {
   width: 48px;
   height: 48px;
+  min-width: 48px;
   border-radius: 12px;
   background: radial-gradient(circle, rgba(212, 160, 23, 0.22) 0%, rgba(10, 14, 23, 0.9) 100%);
   border: 1.5px solid rgba(243, 186, 66, 0.5);
   color: #FCD361;
-  font-family: var(--font-cinzel);
+  font-family: var(--font-cinzel, 'Cinzel', serif);
   font-weight: 800;
-  font-size: 16px;
+  font-size: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 14px rgba(212, 160, 23, 0.25);
+  letter-spacing: 1px;
+}
+
+.leader-card-director .leader-monogram {
+  width: 52px;
+  height: 52px;
+  min-width: 52px;
+  font-size: 17px;
+  border-color: rgba(253, 224, 71, 0.65);
 }
 
 .leader-badge-pill {
@@ -2084,32 +2156,71 @@ html {
   font-weight: 600;
   color: #FCD361;
   background: rgba(212, 160, 23, 0.1);
-  border: 1px solid rgba(212, 160, 23, 0.35);
+  border: 1px solid rgba(212, 160, 23, 0.32);
   padding: 4px 10px;
   border-radius: 100px;
   white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+.leader-card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .leader-name {
-  font-family: var(--font-serif);
-  font-size: 21px;
+  font-family: var(--font-serif, 'Playfair Display', serif);
+  font-size: 20px;
   font-weight: 700;
   color: #FFFFFF;
   margin-bottom: 4px;
+  line-height: 1.25;
+}
+
+.leader-card-director .leader-name {
+  font-size: 22px;
+}
+
+.leadership-management-row .leader-name {
+  font-size: 18.5px;
 }
 
 .leader-role {
-  font-size: 13px;
+  font-size: 12.5px;
   font-weight: 600;
   color: #FCD361;
-  margin-bottom: 14px;
-  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+  letter-spacing: 0.4px;
+}
+
+.leader-card-director .leader-role {
+  font-size: 13.5px;
 }
 
 .leader-bio {
-  font-size: 13.5px;
-  line-height: 1.7;
+  font-size: 13px;
+  line-height: 1.68;
   color: #94A3B8;
+  flex-grow: 1;
+  margin: 0;
+}
+
+.leader-card-director .leader-bio {
+  font-size: 13.5px;
+}
+
+/* Fallback grid if used elsewhere */
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 26px;
+}
+
+/* Hide mobile controls on PC */
+.leadership-mobile-hint,
+.leadership-mobile-controls {
+  display: none;
 }
 
 /* --------------------------------------------------------------------------
@@ -2891,8 +3002,150 @@ html {
   .principle-card {
     padding: 34px 24px;
   }
+  /* =========================================================================
+     CREATIVE MOBILE HORIZONTAL SNAP CAROUSEL FOR LEADERSHIP
+     ========================================================================= */
+  .leadership-mobile-hint {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 auto 28px;
+    padding: 7px 18px;
+    border-radius: 100px;
+    background: rgba(243, 186, 66, 0.08);
+    border: 1px solid rgba(243, 186, 66, 0.28);
+    color: #FCD361;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    animation: hintPulse 2.5s ease-in-out infinite;
+  }
+
+  @keyframes hintPulse {
+    0%, 100% {
+      transform: translateY(0);
+      border-color: rgba(243, 186, 66, 0.28);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    }
+    50% {
+      transform: translateY(-2px);
+      border-color: rgba(243, 186, 66, 0.65);
+      box-shadow: 0 6px 20px rgba(243, 186, 66, 0.15);
+    }
+  }
+
+  .leadership-mobile-hint .hint-icon {
+    font-size: 14px;
+    color: #FDE047;
+    animation: hintBounce 1.8s ease-in-out infinite;
+  }
+
+  @keyframes hintBounce {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(4px); }
+  }
+
+  .leadership-tier-group {
+    margin-bottom: 38px;
+    position: relative;
+  }
+
+  /* Creative Mobile Snap Horizontal Carousel */
+  .leadership-row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
+    padding: 10px 20px 22px 20px;
+    margin: 0 -20px; /* Bleed edge-to-edge for smooth card reveal */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .leadership-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Mobile Card Sizing & Depth Effect */
+  .leadership-row .leader-card {
+    flex: 0 0 84%;
+    max-width: 320px;
+    min-width: 275px;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    padding: 26px 20px;
+    border-radius: 18px;
+    transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  }
+
+  .leadership-row .leader-card.is-active {
+    border-color: rgba(253, 224, 71, 0.75);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(243, 186, 66, 0.22);
+  }
+
+  /* Mobile interactive dots & navigation buttons */
+  .leadership-mobile-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 14px;
+  }
+
+  .leadership-nav-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(243, 186, 66, 0.35);
+    color: #FCD361;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    line-height: 1;
+    padding: 0;
+  }
+
+  .leadership-nav-btn:active {
+    background: rgba(243, 186, 66, 0.25);
+    transform: scale(0.92);
+  }
+
+  .leadership-dots-track {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .leadership-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.22);
+    border: 1px solid rgba(243, 186, 66, 0.3);
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .leadership-dot.active {
+    width: 24px;
+    background: linear-gradient(90deg, #D4A017, #FDE047);
+    border-color: #FDE047;
+    box-shadow: 0 0 10px rgba(243, 186, 66, 0.55);
+  }
+
   .leadership-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    overflow-x: auto;
   }
   .services-grid {
     grid-template-columns: 1fr;

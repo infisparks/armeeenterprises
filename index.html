@@ -724,20 +724,21 @@
 
         <!-- Mobile Scroll Indicator Hint -->
         <div class="leadership-mobile-hint">
-          <span class="hint-icon">⟷</span> Swipe to explore all members
+          <span class="hint-icon">⟷</span> Swipe cards or tap arrows to view team
         </div>
 
         <!-- Tier 1: Board of Directors (3 Cards in Row 1 on PC) -->
-        <div class="leadership-tier-group">
+        <div class="leadership-tier-group" data-tier="directors">
           <div class="tier-label-header">
             <span class="tier-eyebrow-accent"></span>
             <span class="tier-title">Board of Directors</span>
+            <span class="tier-count-pill">3 Members</span>
             <span class="tier-eyebrow-accent"></span>
           </div>
 
-          <div class="leadership-row leadership-directors-row">
+          <div class="leadership-row leadership-directors-row" id="leadershipDirectorsRow">
             <!-- Member 1: Farid Zariwala -->
-            <article class="leader-card leader-card-director">
+            <article class="leader-card leader-card-director is-active">
               <div class="leader-card-header">
                 <div class="leader-monogram">FZ</div>
                 <div class="leader-badge-pill">Director • 32+ Yrs Experience</div>
@@ -781,19 +782,31 @@
               </div>
             </article>
           </div>
+
+          <!-- Mobile Controls for Tier 1 -->
+          <div class="leadership-mobile-controls" data-target="leadershipDirectorsRow">
+            <button class="leadership-nav-btn prev-btn" aria-label="Previous Director" type="button">‹</button>
+            <div class="leadership-dots-track">
+              <span class="leadership-dot active" data-index="0"></span>
+              <span class="leadership-dot" data-index="1"></span>
+              <span class="leadership-dot" data-index="2"></span>
+            </div>
+            <button class="leadership-nav-btn next-btn" aria-label="Next Director" type="button">›</button>
+          </div>
         </div>
 
         <!-- Tier 2: Senior Management & Project Execution (4 Cards in Row 2 on PC) -->
-        <div class="leadership-tier-group">
+        <div class="leadership-tier-group" data-tier="management">
           <div class="tier-label-header">
             <span class="tier-eyebrow-accent"></span>
             <span class="tier-title">Senior Management &amp; Operations</span>
+            <span class="tier-count-pill">4 Members</span>
             <span class="tier-eyebrow-accent"></span>
           </div>
 
-          <div class="leadership-row leadership-management-row">
+          <div class="leadership-row leadership-management-row" id="leadershipManagementRow">
             <!-- Member 4: Meraj Zariwala -->
-            <article class="leader-card">
+            <article class="leader-card is-active">
               <div class="leader-card-header">
                 <div class="leader-monogram">MZ</div>
                 <div class="leader-badge-pill">Next-Gen Leadership</div>
@@ -851,6 +864,18 @@
                 </p>
               </div>
             </article>
+          </div>
+
+          <!-- Mobile Controls for Tier 2 -->
+          <div class="leadership-mobile-controls" data-target="leadershipManagementRow">
+            <button class="leadership-nav-btn prev-btn" aria-label="Previous Leader" type="button">‹</button>
+            <div class="leadership-dots-track">
+              <span class="leadership-dot active" data-index="0"></span>
+              <span class="leadership-dot" data-index="1"></span>
+              <span class="leadership-dot" data-index="2"></span>
+              <span class="leadership-dot" data-index="3"></span>
+            </div>
+            <button class="leadership-nav-btn next-btn" aria-label="Next Leader" type="button">›</button>
           </div>
         </div>
       </div>

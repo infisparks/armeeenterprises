@@ -242,6 +242,93 @@ _Submitted via website form_`;
   window.addEventListener('scroll', updateNavActiveState, { passive: true });
 
   // ==========================================================================
+  // CREATIVE MOBILE LEADERSHIP CAROUSEL CONTROLLER
+  // Horizontal snapping with dynamic active indicators, dot pills & arrows
+  // ==========================================================================
+  const leadershipControlGroups = document.querySelectorAll('.leadership-mobile-controls');
+  
+  leadershipControlGroups.forEach(controlGroup => {
+    const targetId = controlGroup.getAttribute('data-target');
+    const row = document.getElementById(targetId);
+    if (!row) return;
+
+    const cards = row.querySelectorAll('.leader-card');
+    const dots = controlGroup.querySelectorAll('.leadership-dot');
+    const prevBtn = controlGroup.querySelector('.prev-btn');
+    const nextBtn = controlGroup.querySelector('.next-btn');
+
+    let isScrolling = false;
+
+    function getCardIndex() {
+      const rowCenter = row.scrollLeft + row.clientWidth / 2;
+      let closestIdx = 0;
+      let minDiff = Infinity;
+
+      cards.forEach((card, idx) => {
+        const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+        const diff = Math.abs(rowCenter - cardCenter);
+        if (diff < minDiff) {
+          minDiff = diff;
+          closestIdx = idx;
+        }
+      });
+      return closestIdx;
+    }
+
+    function updateActiveState() {
+      const activeIdx = getCardIndex();
+      
+      cards.forEach((card, idx) => {
+        card.classList.toggle('is-active', idx === activeIdx);
+      });
+
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === activeIdx);
+      });
+    }
+
+    function scrollToCard(index) {
+      if (index < 0 || index >= cards.length) return;
+      const card = cards[index];
+      const scrollTarget = card.offsetLeft - (row.clientWidth - card.offsetWidth) / 2;
+      row.scrollTo({
+        left: scrollTarget,
+        behavior: 'smooth'
+      });
+    }
+
+    row.addEventListener('scroll', () => {
+      if (!isScrolling) {
+        window.requestAnimationFrame(() => {
+          updateActiveState();
+          isScrolling = false;
+        });
+        isScrolling = true;
+      }
+    }, { passive: true });
+
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => {
+        scrollToCard(idx);
+      });
+    });
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        const currentIdx = getCardIndex();
+        scrollToCard(Math.max(0, currentIdx - 1));
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        const currentIdx = getCardIndex();
+        scrollToCard(Math.min(cards.length - 1, currentIdx + 1));
+      });
+    }
+  });
+
+  // ==========================================================================
   // ATMOSPHERIC LUXURY WIND ENGINE
   // Realistic breeze streamlines, twilight floating dust/embers & natural gusts
   // ==========================================================================
