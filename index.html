@@ -34,15 +34,23 @@
         <stop offset="65%" stop-color="#E5A42D" />
         <stop offset="100%" stop-color="#9C5E0D" />
       </linearGradient>
+
+      <!-- High-Contrast 24K Gold Linear Gradient for White & Light Backgrounds -->
+      <linearGradient id="goldSvgGradDark" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#D97706" />
+        <stop offset="50%" stop-color="#B45309" />
+        <stop offset="100%" stop-color="#78350F" />
+      </linearGradient>
     </defs>
   </svg>
 
   <!-- ======================================================================
        1. DESKTOP HERO SECTION (Screen >= 992px)
+       Uses pc_bg_hero.png
        ====================================================================== -->
   <section class="hero-wrapper hero-desktop" id="home">
     
-    <!-- Glowing Trajectory Arc SVG -->
+    <!-- Glowing Trajectory Arc -->
     <svg class="hero-arc-svg" viewBox="0 0 1920 1080" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="arcGlow" x1="0%" y1="100%" x2="100%" y2="0%">
@@ -65,6 +73,9 @@
             filter="url(#arcBlur)" />
     </svg>
 
+    <!-- Cinematic Atmospheric Wind Effect Canvas -->
+    <canvas class="hero-wind-canvas" id="desktopWindCanvas" aria-hidden="true"></canvas>
+
     <!-- Desktop Navigation -->
     <header class="navbar desktop-nav">
       <div class="nav-brand">
@@ -74,12 +85,13 @@
       </div>
 
       <nav>
-        <ul class="nav-links">
+        <ul class="nav-links desktop-nav-links">
           <li class="nav-item active"><a href="#home">Home</a></li>
           <li class="nav-item"><a href="#about">About Us</a></li>
+          <li class="nav-item"><a href="#principles">Principles</a></li>
+          <li class="nav-item"><a href="#leadership">Leadership</a></li>
+          <li class="nav-item"><a href="#expertise">Expertise</a></li>
           <li class="nav-item"><a href="#projects">Projects</a></li>
-          <li class="nav-item"><a href="#expertise">Our Expertise</a></li>
-          <li class="nav-item"><a href="#careers">Careers</a></li>
           <li class="nav-item"><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -248,18 +260,25 @@
     <!-- Desktop Stats Footer -->
     <footer class="hero-footer desktop-footer">
       <div class="stats-card">
+        <!-- Stat 1 -->
         <div class="stat-item">
           <span class="stat-value">10+</span>
           <span class="stat-label">Years of<br>Experience</span>
         </div>
+
+        <!-- Stat 2 -->
         <div class="stat-item">
           <span class="stat-value">25+</span>
           <span class="stat-label">Projects<br>Delivered</span>
         </div>
+
+        <!-- Stat 3 -->
         <div class="stat-item">
           <span class="stat-value">1M+</span>
           <span class="stat-label">Sq. Ft.<br>Developed</span>
         </div>
+
+        <!-- Stat 4 -->
         <div class="stat-item">
           <span class="stat-value">100%</span>
           <span class="stat-label">Commitment<br>to Quality</span>
@@ -274,6 +293,9 @@
        ====================================================================== -->
   <section class="hero-wrapper hero-mobile" id="home-mobile">
     
+    <!-- Cinematic Atmospheric Wind Effect Canvas -->
+    <canvas class="hero-wind-canvas" id="mobileWindCanvas" aria-hidden="true"></canvas>
+
     <!-- Mobile Top Bar -->
     <header class="mobile-top-bar">
       <div class="mobile-brand">
@@ -301,45 +323,51 @@
 
     <!-- Mobile Main Body Content -->
     <main class="mobile-hero-body">
-      <!-- 1-Line Eyebrow Tagline -->
+      <!-- 2-Line Eyebrow Tagline with Flanking Lines -->
       <div class="mobile-eyebrow">
-        <span class="mobile-eyebrow-line"></span>
-        <span class="mobile-eyebrow-text">Crafting Landmarks • Building Legacies</span>
+        <div class="mobile-eyebrow-top">
+          <span class="mobile-eyebrow-line"></span>
+          <span class="mobile-eyebrow-text">Crafting Landmarks</span>
+          <span class="mobile-eyebrow-line"></span>
+        </div>
+        <div class="mobile-eyebrow-bottom">Building Legacies</div>
       </div>
 
-      <!-- Headline: 1 Line -->
+      <!-- Headline: Elevated Living. -->
       <h1 class="mobile-headline">
-        <span class="headline-elevated">Elevated</span>
-        <span class="headline-living">Living.</span>
+        <span class="headline-elevated">Elevated </span><span class="headline-living">Living.</span>
       </h1>
 
-      <!-- Concise Subtitle: Exactly 2 Lines -->
+      <!-- Subtitle Description Paragraph -->
       <p class="mobile-desc">
-        <span class="desc-line">Thoughtfully crafted luxury spaces with</span>
-        <span class="desc-line">engineering excellence &amp; quality.</span>
+        Thoughtfully designed spaces with engineering excellence, enduring quality and a vision for better generations.
       </p>
 
-      <!-- Primary Explore Button -->
+      <!-- Middle Spacer to showcase the illuminated skyscraper tower -->
+      <div class="mobile-tower-spacer" aria-hidden="true"></div>
+    </main>
+
+    <!-- Mobile Bottom Section: Explore Button + 4 Features Card -->
+    <footer class="mobile-footer">
+      <!-- Centered Explore Button -->
       <button class="mobile-explore-btn js-open-enquiry" type="button">
         <span>Explore Noori Horizon</span>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#120D04" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#120D04" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
           <line x1="5" y1="12" x2="19" y2="12"></line>
           <polyline points="12 5 19 12 12 19"></polyline>
         </svg>
       </button>
-    </main>
 
-    <!-- Mobile Bottom Features Card (4 Feature Highlights) -->
-    <footer class="mobile-footer">
+      <!-- Bottom 4 Features Card with Dividers -->
       <div class="mobile-features-card">
         <!-- Feature 1: Engineering Excellence -->
         <div class="mobile-feature-col">
           <div class="mobile-feature-icon" aria-hidden="true">
             <svg viewBox="0 0 32 32" fill="none" stroke="url(#goldSvgGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="3" y1="21" x2="29" y2="21"></line>
-              <path d="M6 21C6 13.5 10.5 8 16 8C21.5 8 26 13.5 26 21"></path>
-              <line x1="16" y1="5" x2="16" y2="9"></line>
-              <line x1="13" y1="7" x2="19" y2="7"></line>
+              <path d="M5 21C5 12.5 9 7 16 7C23 7 27 12.5 27 21"></path>
+              <path d="M3 21H29"></path>
+              <path d="M16 7V13"></path>
+              <path d="M12.5 10H19.5"></path>
             </svg>
           </div>
           <div class="mobile-feature-text">Engineering<br>Excellence</div>
@@ -395,8 +423,795 @@
   </section>
 
   <!-- ======================================================================
-       SHARED COMPONENTS: Mobile Drawer, Enquiry Modal, Video Modal, Project Modal
+       MAIN CONTENT: Extended Corporate & Project Architecture
        ====================================================================== -->
+  <main id="main-content" class="site-main-content">
+
+    <!-- ------------------------------------------------------------------
+         SECTION 1: LEGACY & AMBITION INTRO STRIP
+         ------------------------------------------------------------------ -->
+    <section class="section-legacy-strip" id="legacy">
+      <div class="content-container">
+        <div class="legacy-intro-grid">
+          <div class="legacy-intro-text">
+            <div class="section-eyebrow">
+              <span class="eyebrow-accent-bar"></span>
+              <span class="eyebrow-caption">Decades of Legacy • A New Era of Execution</span>
+            </div>
+            <h2 class="legacy-main-title">
+              Rooted in Legacy. <br>
+              <span class="text-gold-gradient">Driven by Ambition.</span>
+            </h2>
+            <p class="legacy-lead-desc">
+              Armee Enterprises represents the next chapter in construction built on decades of industry experience since 1987, combining seasoned leadership with modern execution standards.
+            </p>
+            <div class="legacy-cta-group">
+              <a href="#about" class="btn-primary-explore">
+                <span>Discover Our Story</span>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+              <a href="#contact" class="btn-secondary-outline">
+                <span>Get In Touch</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 2L11 13"></path>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="legacy-metrics-cluster">
+            <div class="metric-card">
+              <div class="metric-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="url(#goldSvgGradDark)" stroke-width="1.8">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div class="metric-value-wrap">
+                <span class="metric-number">Since '87</span>
+              </div>
+              <div class="metric-label">Construction Heritage</div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="url(#goldSvgGradDark)" stroke-width="1.8">
+                  <rect x="4" y="2" width="16" height="20" rx="2"></rect>
+                  <line x1="9" y1="22" x2="9" y2="2"></line>
+                  <path d="M4 12h16"></path>
+                  <path d="M4 7h16"></path>
+                  <path d="M4 17h16"></path>
+                </svg>
+              </div>
+              <div class="metric-value-wrap">
+                <span class="metric-number">4 Towers</span>
+              </div>
+              <div class="metric-label">29 Floors Each</div>
+            </div>
+
+            <div class="metric-card">
+              <div class="metric-icon-wrap">
+                <svg viewBox="0 0 24 24" fill="none" stroke="url(#goldSvgGradDark)" stroke-width="1.8">
+                  <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                </svg>
+              </div>
+              <div class="metric-value-wrap">
+                <span class="metric-number">18 Mo.</span>
+              </div>
+              <div class="metric-label">Target Timeline</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         SECTION 2: ABOUT US
+         ------------------------------------------------------------------ -->
+    <section class="section-about" id="about">
+      <div class="content-container">
+        <div class="about-grid">
+          <div class="about-text-column">
+            <div class="section-eyebrow">
+              <span class="eyebrow-accent-bar"></span>
+              <span class="eyebrow-caption">ARMEE ENTERPRISES</span>
+            </div>
+            <h2 class="section-heading">
+              Decades of Legacy. <br>
+              <span class="text-gold-gradient">A New Era of Execution.</span>
+            </h2>
+            <div class="about-subheading">
+              Shaping Skylines from Bandra West, Mumbai
+            </div>
+            <div class="about-paragraphs">
+              <p>
+                Based in Bandra West, Mumbai, Armee Enterprises represents the next chapter in a construction legacy built on decades of industry experience, entrepreneurial vision, and a commitment to excellence.
+              </p>
+              <p>
+                An extension of Noori Construction, with a presence in the construction industry since 1987, Armee Enterprises combines the strength of an established legacy with a forward-looking approach to construction and project execution.
+              </p>
+            </div>
+            <div class="about-badges-row">
+              <div class="about-badge-item">
+                <span class="badge-dot"></span>
+                <span>Bandra West Headquarters</span>
+              </div>
+              <div class="about-badge-item">
+                <span class="badge-dot"></span>
+                <span>Noori Construction Extension</span>
+              </div>
+              <div class="about-badge-item">
+                <span class="badge-dot"></span>
+                <span>Modern Execution Standards</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-quote-column">
+            <div class="quote-card-luxury">
+              <div class="quote-mark" aria-hidden="true">“</div>
+              <blockquote class="quote-text">
+                For us, construction is more than the creation of buildings. It is about transforming vision into reality, delivering on commitments, and building structures that stand as a testament to the people and purpose behind them.
+              </blockquote>
+              <div class="quote-author-signature">
+                <div class="author-avatar-crest">AE</div>
+                <div class="author-info">
+                  <div class="author-title">Board of Directors</div>
+                  <div class="author-subtitle">Armee Enterprises • Bandra West, Mumbai</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         SECTION 3: OUR CORE PRINCIPLES
+         ------------------------------------------------------------------ -->
+    <section class="section-principles" id="principles">
+      <div class="content-container">
+        <div class="section-header-centered">
+          <div class="section-eyebrow justify-center">
+            <span class="eyebrow-accent-bar"></span>
+            <span class="eyebrow-caption">Our Core Principles</span>
+            <span class="eyebrow-accent-bar"></span>
+          </div>
+          <h2 class="section-heading">Setting New Benchmarks</h2>
+          <p class="section-lead-paragraph">
+            At Armee Enterprises, we believe that the future of construction belongs to organisations that can combine experience with innovation, ambition with discipline, and speed with systematic execution.
+          </p>
+        </div>
+
+        <div class="principles-grid">
+          <!-- Principle 01 -->
+          <article class="principle-card">
+            <div class="principle-watermark">01</div>
+            <div class="principle-icon-wrapper">
+              <svg viewBox="0 0 32 32" fill="none" stroke="url(#goldSvgGradDark)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 28h24"></path>
+                <path d="M6 28V12l10-8 10 8v16"></path>
+                <path d="M12 28V18h8v10"></path>
+                <circle cx="16" cy="10" r="2"></circle>
+              </svg>
+            </div>
+            <div class="principle-number-tag">Principle 01</div>
+            <h3 class="principle-title">Experience That Guides Us</h3>
+            <p class="principle-desc">
+              Drawing on the construction legacy established in 1987, we value the practical knowledge and industry understanding that come with decades of experience.
+            </p>
+          </article>
+
+          <!-- Principle 02 -->
+          <article class="principle-card">
+            <div class="principle-watermark">02</div>
+            <div class="principle-icon-wrapper">
+              <svg viewBox="0 0 32 32" fill="none" stroke="url(#goldSvgGradDark)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="16" cy="16" r="12"></circle>
+                <polyline points="16 8 16 16 22 16"></polyline>
+                <path d="M16 4V2"></path>
+                <path d="M28 16h2"></path>
+                <path d="M16 28v2"></path>
+                <path d="M2 16h2"></path>
+              </svg>
+            </div>
+            <div class="principle-number-tag">Principle 02</div>
+            <h3 class="principle-title">Execution That Defines Us</h3>
+            <p class="principle-desc">
+              We recognise that ambitious timelines require meticulous planning, effective coordination, efficient procurement, and consistent operational oversight.
+            </p>
+          </article>
+
+          <!-- Principle 03 -->
+          <article class="principle-card">
+            <div class="principle-watermark">03</div>
+            <div class="principle-icon-wrapper">
+              <svg viewBox="0 0 32 32" fill="none" stroke="url(#goldSvgGradDark)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 24l7-7 5 5 11-11"></path>
+                <polyline points="20 11 28 11 28 19"></polyline>
+                <path d="M2 28h28"></path>
+              </svg>
+            </div>
+            <div class="principle-number-tag">Principle 03</div>
+            <h3 class="principle-title">Ambition That Drives Us</h3>
+            <p class="principle-desc">
+              We aspire to challenge conventional expectations and establish new benchmarks for high-rise construction through a culture of accountability, teamwork, and continuous improvement.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         SECTION 4: OUR LEADERSHIP TEAM
+         ------------------------------------------------------------------ -->
+    <section class="section-leadership" id="leadership">
+      <div class="content-container">
+        <div class="section-header-centered">
+          <div class="section-eyebrow justify-center">
+            <span class="eyebrow-accent-bar"></span>
+            <span class="eyebrow-caption">Our Leadership Team</span>
+            <span class="eyebrow-accent-bar"></span>
+          </div>
+          <h2 class="section-heading">Expertise, Vision & Energy</h2>
+          <p class="section-lead-paragraph">
+            At the heart of Armee Enterprises is a team that brings together decades of construction expertise, entrepreneurial leadership, commercial intelligence, and the energy of a new generation.
+          </p>
+        </div>
+
+        <div class="leadership-grid">
+          <!-- Member 1: Farid Zariwala -->
+          <article class="leader-card leader-card-director">
+            <div class="leader-card-header">
+              <div class="leader-monogram">FZ</div>
+              <div class="leader-badge-pill">Director • 32+ Yrs Experience</div>
+            </div>
+            <div class="leader-card-body">
+              <h3 class="leader-name">Farid Zariwala</h3>
+              <div class="leader-role">Director</div>
+              <p class="leader-bio">
+                With over 32 years of experience in the construction industry, Farid Zariwala brings seasoned leadership, extensive industry knowledge, and practical expertise. Providing strategic direction grounded in years of experience and an understanding of Mumbai's construction sector complexities.
+              </p>
+            </div>
+          </article>
+
+          <!-- Member 2: Capt. Faisal Khan -->
+          <article class="leader-card leader-card-director">
+            <div class="leader-card-header">
+              <div class="leader-monogram">FK</div>
+              <div class="leader-badge-pill">Director • Strategic Vision</div>
+            </div>
+            <div class="leader-card-body">
+              <h3 class="leader-name">Capt. Faisal Khan</h3>
+              <div class="leader-role">Director</div>
+              <p class="leader-bio">
+                A distinguished businessman with investments across diverse business sectors, bringing a broad commercial perspective and an entrepreneurial approach to leadership, supporting growth opportunities and sound decision-making.
+              </p>
+            </div>
+          </article>
+
+          <!-- Member 3: Jalal Khan -->
+          <article class="leader-card leader-card-director">
+            <div class="leader-card-header">
+              <div class="leader-monogram">JK</div>
+              <div class="leader-badge-pill">Director • Business & Construction</div>
+            </div>
+            <div class="leader-card-body">
+              <h3 class="leader-name">Jalal Khan</h3>
+              <div class="leader-role">Director</div>
+              <p class="leader-bio">
+                An entrepreneur with experience in both business and construction, bringing a practical understanding of industry dynamics and project development to drive business development and effective execution.
+              </p>
+            </div>
+          </article>
+
+          <!-- Member 4: Meraj Zariwala -->
+          <article class="leader-card">
+            <div class="leader-card-header">
+              <div class="leader-monogram">MZ</div>
+              <div class="leader-badge-pill">Next-Gen Leadership</div>
+            </div>
+            <div class="leader-card-body">
+              <h3 class="leader-name">Meraj Zariwala</h3>
+              <div class="leader-role">Project Manager | CEO, Noori Group</div>
+              <p class="leader-bio">
+                Representing next-generation leadership, combining an entrepreneurial mindset with modern management practices to focus on execution planning, interdepartmental coordination, and delivering ambitious timelines.
+              </p>
+            </div>
+          </article>
+
+          <!-- Member 5: Dahniyal Khan -->
+          <article class="leader-card">
+            <div class="leader-card-header">
+              <div class="leader-monogram">DK</div>
+              <div class="leader-badge-pill">Procurement Operations</div>
+            </div>
+            <div class="leader-card-body">
+              <h3 class="leader-name">Dahniyal Khan</h3>
+              <div class="leader-role">Purchase Manager</div>
+              <p class="leader-bio">
+                Dynamic and proactive, bringing energy and a solutions-oriented mindset to procurement operations, ensuring timely material sourcing and cost-conscious purchasing decisions.
+              </p>
+            </div>
+          </article>
+
+          <!-- Member 6: Sarfaraz Merchant -->
+          <article class="leader-card">
+            <div class="leader-card-header">
+              <div class="leader-monogram">SM</div>
+              <div class="leader-badge-pill">Commercial Negotiation</div>
+            </div>
+            <div class="leader-card-body">
+              <h3 class="leader-name">Sarfaraz Merchant</h3>
+              <div class="leader-role">Purchase Manager</div>
+              <p class="leader-bio">
+                Combining commercial awareness with a sharp approach to supplier negotiations, assessing costs, and focusing on value to support procurement efficiency and project requirements.
+              </p>
+            </div>
+          </article>
+
+          <!-- Member 7: Ziyad Khan -->
+          <article class="leader-card">
+            <div class="leader-card-header">
+              <div class="leader-monogram">ZK</div>
+              <div class="leader-badge-pill">Operations & Site</div>
+            </div>
+            <div class="leader-card-body">
+              <h3 class="leader-name">Ziyad Khan</h3>
+              <div class="leader-role">Operations Manager</div>
+              <p class="leader-bio">
+                Young, dedicated, and focused, bringing a hands-on approach to operational management, aligning site activities, teams, and day-to-day efficiency to keep execution organised.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         SECTION 5: OUR EXPERTISE / SERVICES
+         ------------------------------------------------------------------ -->
+    <section class="section-services" id="expertise">
+      <div class="content-container">
+        <div class="section-header-centered">
+          <div class="section-eyebrow justify-center">
+            <span class="eyebrow-accent-bar"></span>
+            <span class="eyebrow-caption">Our Expertise</span>
+            <span class="eyebrow-accent-bar"></span>
+          </div>
+          <h2 class="section-heading">Comprehensive Construction Services</h2>
+          <p class="section-lead-paragraph">
+            From foundation to finishing touch, we offer end-to-end execution across various industry sectors.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Service 1: High-Rise Construction -->
+          <article class="service-card">
+            <div class="service-card-glow"></div>
+            <div class="service-icon-wrap">
+              <svg viewBox="0 0 32 32" fill="none" stroke="url(#goldSvgGradDark)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="5" y="4" width="22" height="24" rx="1.5"></rect>
+                <line x1="11" y1="9" x2="13" y2="9"></line>
+                <line x1="19" y1="9" x2="21" y2="9"></line>
+                <line x1="11" y1="14" x2="13" y2="14"></line>
+                <line x1="19" y1="14" x2="21" y2="14"></line>
+                <line x1="11" y1="19" x2="13" y2="19"></line>
+                <line x1="19" y1="19" x2="21" y2="19"></line>
+                <path d="M13 28v-4h6v4"></path>
+              </svg>
+            </div>
+            <h3 class="service-title">High-Rise Construction</h3>
+            <p class="service-desc">
+              Specialized structural execution and engineering designed for multi-story towers with rigorous timeline adherence.
+            </p>
+            <ul class="service-features-list">
+              <li>Earthquake-resistant framed RCC engineering</li>
+              <li>Rapid vertical construction workflows</li>
+              <li>Rigorous multi-tier quality control</li>
+            </ul>
+            <div class="service-action-wrap">
+              <a href="#contact" class="service-link-btn">
+                <span>Learn More</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Service 2: Residential Development -->
+          <article class="service-card">
+            <div class="service-card-glow"></div>
+            <div class="service-icon-wrap">
+              <svg viewBox="0 0 32 32" fill="none" stroke="url(#goldSvgGradDark)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 13l13-9 13 9v14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V13z"></path>
+                <path d="M12 28V16h8v12"></path>
+                <rect x="8" y="10" width="3" height="3"></rect>
+                <rect x="21" y="10" width="3" height="3"></rect>
+              </svg>
+            </div>
+            <h3 class="service-title">Residential Development</h3>
+            <p class="service-desc">
+              Constructing multi-family apartments and residential spaces with superior craftsmanship and structural longevity.
+            </p>
+            <ul class="service-features-list">
+              <li>Luxury finishes & thoughtful spatial planning</li>
+              <li>Sustainable and energy-efficient building systems</li>
+              <li>Rehabilitation & landmark community infrastructure</li>
+            </ul>
+            <div class="service-action-wrap">
+              <a href="#contact" class="service-link-btn">
+                <span>Learn More</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Service 3: Turnkey Project Management -->
+          <article class="service-card">
+            <div class="service-card-glow"></div>
+            <div class="service-icon-wrap">
+              <svg viewBox="0 0 32 32" fill="none" stroke="url(#goldSvgGradDark)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 12h1a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V14a2 2 0 0 1 2-2h1"></path>
+                <rect x="10" y="4" width="12" height="8" rx="1"></rect>
+                <path d="M12 18h8"></path>
+                <path d="M12 22h5"></path>
+              </svg>
+            </div>
+            <h3 class="service-title">Turnkey Project Management</h3>
+            <p class="service-desc">
+              Comprehensive oversight managing scheduling, procurement coordination, subcontractor alignment, and quality control.
+            </p>
+            <ul class="service-features-list">
+              <li>Integrated scheduling & cost management</li>
+              <li>Proactive vendor and material sourcing</li>
+              <li>Strict statutory compliance & site safety</li>
+            </ul>
+            <div class="service-action-wrap">
+              <a href="#contact" class="service-link-btn">
+                <span>Learn More</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         SECTION 6: OUR TRACK RECORD / FEATURED PROJECTS
+         ------------------------------------------------------------------ -->
+    <section class="section-projects" id="projects">
+      <div class="content-container">
+        <div class="section-header-centered">
+          <div class="section-eyebrow justify-center">
+            <span class="eyebrow-accent-bar"></span>
+            <span class="eyebrow-caption">Our Track Record</span>
+            <span class="eyebrow-accent-bar"></span>
+          </div>
+          <h2 class="section-heading">Featured Projects</h2>
+          <p class="section-lead-paragraph">
+            Demonstrating execution excellence across landmark high-rise developments and decades of residential delivery in Mumbai.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Four High-Rise Towers -->
+          <article class="project-showcase-card">
+            <div class="project-card-header">
+              <div class="project-badge-tag">Flagship Development</div>
+              <div class="project-timeline-pill">Target: 18 Months</div>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-name">Four High-Rise Towers (29 Floors)</h3>
+              <p class="project-description">
+                Ambitious multi-tower high-rise construction project targeted for delivery within an 18-month execution timeline. Engineered for seismic resistance, architectural elegance, and accelerated delivery benchmarks.
+              </p>
+              
+              <div class="project-meta-grid">
+                <div class="project-meta-item">
+                  <span class="meta-label">Location</span>
+                  <span class="meta-value">Mumbai</span>
+                </div>
+                <div class="project-meta-item">
+                  <span class="meta-label">Timeline</span>
+                  <span class="meta-value">18 Months</span>
+                </div>
+                <div class="project-meta-item">
+                  <span class="meta-label">Scale</span>
+                  <span class="meta-value">4 Towers • 29 Floors Each</span>
+                </div>
+                <div class="project-meta-item">
+                  <span class="meta-label">Execution</span>
+                  <span class="meta-value">Fast-Track Turnkey</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <button class="project-action-btn js-open-project" type="button">
+                <span>View Project Specifications</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Project 2: Noori Construction Portfolio -->
+          <article class="project-showcase-card">
+            <div class="project-card-header">
+              <div class="project-badge-tag">Residential Legacy</div>
+              <div class="project-timeline-pill">Presence Since 1987</div>
+            </div>
+            <div class="project-card-body">
+              <h3 class="project-name">Noori Construction Portfolio</h3>
+              <p class="project-description">
+                Decades of landmark residential and commercial developments built since 1987 across Mumbai. A proven heritage of superior engineering, trusted partnerships, and transformative community structures.
+              </p>
+              
+              <div class="project-meta-grid">
+                <div class="project-meta-item">
+                  <span class="meta-label">Location</span>
+                  <span class="meta-value">Mumbai</span>
+                </div>
+                <div class="project-meta-item">
+                  <span class="meta-label">Established</span>
+                  <span class="meta-value">1987</span>
+                </div>
+                <div class="project-meta-item">
+                  <span class="meta-label">Portfolio</span>
+                  <span class="meta-value">25+ Completed Landmarks</span>
+                </div>
+                <div class="project-meta-item">
+                  <span class="meta-label">Built Area</span>
+                  <span class="meta-value">Over 1,000,000 Sq. Ft.</span>
+                </div>
+              </div>
+            </div>
+            <div class="project-card-footer">
+              <button class="project-action-btn js-open-enquiry" type="button">
+                <span>Request Portfolio Overview</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         SECTION 7: GET IN TOUCH / CONTACT
+         ------------------------------------------------------------------ -->
+    <section class="section-contact" id="contact">
+      <div class="content-container">
+        <div class="contact-wrapper-card">
+          <div class="contact-grid">
+            <!-- Left Column: Form -->
+            <div class="contact-form-column">
+              <div class="section-eyebrow">
+                <span class="eyebrow-accent-bar"></span>
+                <span class="eyebrow-caption">Get In Touch</span>
+              </div>
+              <h2 class="contact-main-heading">
+                Let's Build the Future <br>
+                <span class="text-gold-gradient">Together</span>
+              </h2>
+              <p class="contact-tagline">
+                Rooted in legacy. Driven by ambition. Defined by execution.
+              </p>
+
+              <form class="site-contact-form" id="contactSectionForm">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label" for="contactFullName">Your Full Name <span class="required-star">*</span></label>
+                    <input type="text" id="contactFullName" class="form-input" placeholder="e.g. Rahul Sharma" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="contactEmail">Email Address <span class="required-star">*</span></label>
+                    <input type="email" id="contactEmail" class="form-input" placeholder="name@domain.com" required>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="contactInquiryType">Inquiry Type <span class="required-star">*</span></label>
+                  <select id="contactInquiryType" class="form-input form-select" required>
+                    <option value="" disabled selected>Select Inquiry Type</option>
+                    <option value="High-Rise Construction">High-Rise Construction</option>
+                    <option value="Partnership">Partnership</option>
+                    <option value="Project Consultation">Project Consultation</option>
+                    <option value="General Inquiry">General Inquiry</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="contactMessage">Message <span class="required-star">*</span></label>
+                  <textarea id="contactMessage" class="form-input form-textarea" rows="4" placeholder="Tell us about your project requirements or inquiry..." required></textarea>
+                </div>
+
+                <button type="submit" class="contact-submit-btn">
+                  <span>Submit Inquiry</span>
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </button>
+              </form>
+            </div>
+
+            <!-- Right Column: Corporate Info & Details -->
+            <div class="contact-info-column">
+              <div class="info-card-luxury">
+                <div class="info-badge-head">
+                  <div class="info-ae-emblem">AE</div>
+                  <div>
+                    <h3 class="info-brand-title">Armee Enterprises</h3>
+                    <p class="info-brand-sub">Engineers • Builders • Developers • Contractors</p>
+                  </div>
+                </div>
+
+                <div class="info-details-list">
+                  <div class="info-detail-item">
+                    <div class="info-detail-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="url(#goldSvgGrad)" stroke-width="1.8">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="info-item-label">Headquarters</div>
+                      <div class="info-item-value">Bandra West, Mumbai, Maharashtra, India</div>
+                    </div>
+                  </div>
+
+                  <div class="info-detail-item">
+                    <div class="info-detail-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="url(#goldSvgGrad)" stroke-width="1.8">
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="info-item-label">Phone Support</div>
+                      <div class="info-item-value">+91 (022) 2650-ARMEE</div>
+                    </div>
+                  </div>
+
+                  <div class="info-detail-item">
+                    <div class="info-detail-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="url(#goldSvgGrad)" stroke-width="1.8">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="info-item-label">Email Communications</div>
+                      <div class="info-item-value">contact@armeeenterprises.com</div>
+                    </div>
+                  </div>
+
+                  <div class="info-detail-item">
+                    <div class="info-detail-icon">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="url(#goldSvgGrad)" stroke-width="1.8">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                      </svg>
+                    </div>
+                    <div>
+                      <div class="info-item-label">Operational Hours</div>
+                      <div class="info-item-value">Monday – Saturday: 9:00 AM – 7:00 PM IST</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="info-trust-card">
+                  <div class="trust-pill">Heritage Since 1987</div>
+                  <p class="trust-desc">
+                    An extension of Noori Construction, committed to structural integrity and visionary urban landmarks.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ------------------------------------------------------------------
+         SECTION 8: SITE FOOTER
+         ------------------------------------------------------------------ -->
+    <footer class="site-footer">
+      <div class="content-container">
+        <div class="footer-grid">
+          <!-- Col 1: Brand & Tagline -->
+          <div class="footer-col footer-col-brand">
+            <div class="footer-logo-wrap">
+              <a href="#home">
+                <img src="logo.png" alt="Armee Enterprises Logo" class="footer-logo-img">
+              </a>
+            </div>
+            <div class="footer-brand-title">Armee Enterprises</div>
+            <p class="footer-tagline">
+              Rooted in legacy. Driven by ambition. Defined by execution.
+            </p>
+            <div class="footer-badge-heritage">
+              <span>Est. 1987 in Mumbai</span>
+            </div>
+          </div>
+
+          <!-- Col 2: Quick Links -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">Quick Links</h4>
+            <ul class="footer-nav-list">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#leadership">Leadership Team</a></li>
+              <li><a href="#expertise">Services</a></li>
+              <li><a href="#projects">Portfolio</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Legacy -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">Legacy</h4>
+            <ul class="footer-legacy-list">
+              <li>
+                <strong>Extension of Noori Construction</strong>
+                <span>Preserving decades of engineering rigor</span>
+              </li>
+              <li>
+                <strong>Industry Presence Since 1987</strong>
+                <span>Over 35 years of Mumbai construction leadership</span>
+              </li>
+              <li>
+                <strong>4 Towers, 29 Floors Each</strong>
+                <span>Fast-track 18-month execution target</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Headquarters -->
+          <div class="footer-col">
+            <h4 class="footer-col-title">Headquarters</h4>
+            <address class="footer-address">
+              <p>Bandra West, Mumbai, Maharashtra</p>
+              <p><a href="tel:+9102226502763">+91 (022) 2650-ARMEE</a></p>
+              <p><a href="mailto:contact@armeeenterprises.com">contact@armeeenterprises.com</a></p>
+            </address>
+            <div style="margin-top: 16px;">
+              <button class="btn-primary-explore js-open-enquiry" style="padding: 10px 18px; font-size: 13px;" type="button">
+                <span>Enquire Now</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+          <div class="footer-copyright">
+            © 2026 Armee Enterprises. All rights reserved.
+          </div>
+          <div class="footer-bottom-quote">
+            Crafting Landmarks • Building Legacies
+          </div>
+        </div>
+      </div>
+    </footer>
+  </main>
 
   <!-- Mobile Navigation Drawer -->
   <aside class="mobile-nav-drawer" id="mobileDrawer">
@@ -408,14 +1223,15 @@
       <ul class="mobile-nav-links">
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#about">About Us</a></li>
-        <li><a href="#projects">Projects</a></li>
+        <li><a href="#principles">Principles</a></li>
+        <li><a href="#leadership">Leadership</a></li>
         <li><a href="#expertise">Our Expertise</a></li>
-        <li><a href="#careers">Careers</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
     <div>
-      <button class="desktop-enquire-btn js-open-enquiry" style="width: 100%; justify-content: center;">
+      <button class="nav-enquire-btn js-open-enquiry" style="width: 100%; justify-content: center;">
         <span>Enquire Now</span>
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <line x1="5" y1="12" x2="19" y2="12"></line>
