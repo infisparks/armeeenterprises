@@ -1718,12 +1718,18 @@ html {
 }
 
 /* --------------------------------------------------------------------------
-   SECTION 2: ABOUT US (CRISP WHITE BACKGROUND)
+   SECTION 2: ABOUT US (DARK NOIR OBSIDIAN & 24K GOLD LUXURY)
    -------------------------------------------------------------------------- */
 .section-about {
-  padding: 110px 0 100px;
-  background-color: #FFFFFF;
+  padding: 120px 0 115px;
+  background-color: #090E1A;
+  background-image: 
+    radial-gradient(circle at 10% 25%, rgba(212, 160, 23, 0.09) 0%, transparent 50%),
+    radial-gradient(circle at 90% 75%, rgba(30, 41, 59, 0.5) 0%, transparent 55%),
+    linear-gradient(180deg, #070B13 0%, #090E1A 50%, #070B14 100%);
+  border-bottom: 1px solid rgba(212, 160, 23, 0.22);
   position: relative;
+  overflow: hidden;
 }
 
 .about-grid {
@@ -1734,62 +1740,78 @@ html {
 }
 
 .about-subheading {
-  font-size: 18px;
+  font-family: var(--font-serif);
+  font-size: 20px;
   font-weight: 600;
-  color: #B45309;
+  color: #FCD361;
   margin-bottom: 22px;
   letter-spacing: 0.3px;
+  text-shadow: 0 0 12px rgba(252, 211, 97, 0.3);
 }
 
 .about-paragraphs p {
-  font-size: 15px;
+  font-size: 15.5px;
   line-height: 1.75;
-  color: #4B5563;
-  margin-bottom: 16px;
+  color: #94A3B8;
+  margin-bottom: 18px;
 }
 
 .about-badges-row {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 28px;
+  margin-top: 30px;
 }
 
 .about-badge-item {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 16px;
+  padding: 8px 18px;
   border-radius: 100px;
-  background: #F9FAFB;
-  border: 1px solid #E5E7EB;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(212, 160, 23, 0.28);
   font-size: 12px;
   font-weight: 600;
-  color: #374151;
+  color: #F1F5F9;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: all var(--transition-fast);
+}
+
+.about-badge-item:hover {
+  background: rgba(212, 160, 23, 0.12);
+  border-color: rgba(243, 186, 66, 0.6);
+  color: #FFFCEB;
+  transform: translateY(-2px);
 }
 
 .badge-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #D97706;
+  background: #FCD361;
+  box-shadow: 0 0 8px #FCD361;
 }
 
-/* Quote Card Luxury (Warm Ivory on White) */
+/* Quote Card Luxury in Dark Obsidian */
 .quote-card-luxury {
   position: relative;
-  background: linear-gradient(145deg, #FFFDF8 0%, #FDF8ED 100%);
-  border: 1.5px solid rgba(217, 119, 6, 0.28);
-  border-radius: 20px;
-  padding: 44px 36px 36px;
-  box-shadow: 0 14px 34px rgba(217, 119, 6, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.05) 0%, rgba(15, 23, 42, 0.85) 100%);
+  border: 1.5px solid rgba(212, 160, 23, 0.35);
+  border-radius: 22px;
+  padding: 44px 38px 36px;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), 0 0 24px rgba(212, 160, 23, 0.12);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 .quote-mark {
   font-family: var(--font-serif);
   font-size: 72px;
   line-height: 0.8;
-  color: rgba(217, 119, 6, 0.25);
+  color: rgba(252, 211, 97, 0.35);
   margin-bottom: 12px;
   user-select: none;
 }
@@ -1799,7 +1821,7 @@ html {
   font-size: 18px;
   font-style: italic;
   line-height: 1.65;
-  color: #1F2937;
+  color: #F8FAFC;
   margin-bottom: 28px;
 }
 
@@ -1807,7 +1829,7 @@ html {
   display: flex;
   align-items: center;
   gap: 16px;
-  border-top: 1px solid rgba(217, 119, 6, 0.18);
+  border-top: 1px solid rgba(212, 160, 23, 0.2);
   padding-top: 20px;
 }
 
@@ -1816,25 +1838,25 @@ html {
   height: 44px;
   border-radius: 50%;
   background: var(--gold-btn-gradient);
-  color: #111827;
+  color: #0A0E17;
   font-family: var(--font-cinzel);
   font-weight: 800;
   font-size: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+  box-shadow: 0 4px 14px rgba(212, 160, 23, 0.4);
 }
 
 .author-title {
   font-size: 14px;
   font-weight: 700;
-  color: #111827;
+  color: #FFFFFF;
 }
 
 .author-subtitle {
   font-size: 12px;
-  color: #B45309;
+  color: #FCD361;
 }
 
 /* --------------------------------------------------------------------------
@@ -1950,12 +1972,18 @@ html {
 }
 
 /* --------------------------------------------------------------------------
-   SECTION 4: OUR LEADERSHIP TEAM (CRISP WHITE BACKGROUND)
+   SECTION 4: OUR LEADERSHIP TEAM (DARK NOIR OBSIDIAN & 24K GOLD LUXURY)
    -------------------------------------------------------------------------- */
 .section-leadership {
-  padding: 110px 0 110px;
-  background-color: #FFFFFF;
+  padding: 120px 0 125px;
+  background-color: #090E1A;
+  background-image: 
+    radial-gradient(circle at 85% 20%, rgba(212, 160, 23, 0.08) 0%, transparent 55%),
+    radial-gradient(circle at 15% 85%, rgba(30, 41, 59, 0.5) 0%, transparent 55%),
+    linear-gradient(180deg, #070B13 0%, #090E1A 50%, #070B14 100%);
+  border-bottom: 1px solid rgba(212, 160, 23, 0.22);
   position: relative;
+  overflow: hidden;
 }
 
 .leadership-grid {
@@ -1965,25 +1993,28 @@ html {
 }
 
 .leader-card {
-  background: #FFFFFF;
-  border: 1px solid #E5E7EB;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.04) 0%, rgba(15, 23, 42, 0.8) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 160, 23, 0.22);
   border-radius: 18px;
-  padding: 30px 24px;
+  padding: 32px 24px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
   transition: all var(--transition-smooth);
 }
 
 .leader-card:hover {
-  transform: translateY(-4px);
-  border-color: rgba(217, 119, 6, 0.45);
-  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.07), 0 0 16px rgba(217, 119, 6, 0.06);
+  transform: translateY(-6px);
+  border-color: rgba(243, 186, 66, 0.65);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), 0 0 24px rgba(212, 160, 23, 0.2);
 }
 
 .leader-card-director {
-  background: linear-gradient(145deg, #FFFFFF 0%, #FFFDF7 100%);
-  border: 1.5px solid rgba(217, 119, 6, 0.32);
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.06) 0%, rgba(15, 23, 42, 0.9) 100%);
+  border: 1.5px solid rgba(243, 186, 66, 0.4);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(212, 160, 23, 0.12);
 }
 
 .leader-card-header {
@@ -1998,23 +2029,24 @@ html {
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background: #FFFBEB;
-  border: 1.5px solid #FDE68A;
-  color: #B45309;
+  background: radial-gradient(circle, rgba(212, 160, 23, 0.22) 0%, rgba(10, 14, 23, 0.9) 100%);
+  border: 1.5px solid rgba(243, 186, 66, 0.5);
+  color: #FCD361;
   font-family: var(--font-cinzel);
   font-weight: 800;
   font-size: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 0 14px rgba(212, 160, 23, 0.25);
 }
 
 .leader-badge-pill {
   font-size: 11px;
   font-weight: 600;
-  color: #B45309;
-  background: #FFFBEB;
-  border: 1px solid #FDE68A;
+  color: #FCD361;
+  background: rgba(212, 160, 23, 0.1);
+  border: 1px solid rgba(212, 160, 23, 0.35);
   padding: 4px 10px;
   border-radius: 100px;
   white-space: nowrap;
@@ -2022,23 +2054,24 @@ html {
 
 .leader-name {
   font-family: var(--font-serif);
-  font-size: 20px;
+  font-size: 21px;
   font-weight: 700;
-  color: #111827;
+  color: #FFFFFF;
   margin-bottom: 4px;
 }
 
 .leader-role {
   font-size: 13px;
   font-weight: 600;
-  color: #B45309;
+  color: #FCD361;
   margin-bottom: 14px;
+  letter-spacing: 0.5px;
 }
 
 .leader-bio {
-  font-size: 13px;
-  line-height: 1.65;
-  color: #4B5563;
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: #94A3B8;
 }
 
 /* --------------------------------------------------------------------------
@@ -2182,12 +2215,18 @@ html {
 }
 
 /* --------------------------------------------------------------------------
-   SECTION 6: OUR TRACK RECORD / FEATURED PROJECTS (CRISP WHITE BACKGROUND)
+   SECTION 6: OUR TRACK RECORD / FEATURED PROJECTS (DARK NOIR LUXURY)
    -------------------------------------------------------------------------- */
 .section-projects {
-  padding: 110px 0 110px;
-  background-color: #FFFFFF;
+  padding: 120px 0 125px;
+  background-color: #090E1A;
+  background-image: 
+    radial-gradient(circle at 75% 30%, rgba(212, 160, 23, 0.09) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(30, 41, 59, 0.5) 0%, transparent 55%),
+    linear-gradient(180deg, #070B13 0%, #090E1A 50%, #070B14 100%);
+  border-bottom: 1px solid rgba(212, 160, 23, 0.22);
   position: relative;
+  overflow: hidden;
 }
 
 .projects-grid {
@@ -2197,27 +2236,29 @@ html {
 }
 
 .project-showcase-card {
-  background: #FFFFFF;
-  border: 1px solid #E5E7EB;
-  border-radius: 20px;
-  padding: 38px 32px 32px;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.05) 0%, rgba(15, 23, 42, 0.85) 100%);
+  border: 1.5px solid rgba(212, 160, 23, 0.3);
+  border-radius: 22px;
+  padding: 40px 34px 34px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   transition: all var(--transition-smooth);
 }
 
 .project-showcase-card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(217, 119, 6, 0.45);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08), 0 0 20px rgba(217, 119, 6, 0.08);
+  transform: translateY(-6px);
+  border-color: rgba(243, 186, 66, 0.7);
+  box-shadow: 0 24px 54px rgba(0, 0, 0, 0.65), 0 0 28px rgba(212, 160, 23, 0.2);
 }
 
 .project-card-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
   gap: 12px;
 }
 
@@ -2226,9 +2267,9 @@ html {
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: #B45309;
-  background: #FFFBEB;
-  border: 1px solid #FDE68A;
+  color: #FCD361;
+  background: rgba(212, 160, 23, 0.12);
+  border: 1px solid rgba(212, 160, 23, 0.4);
   padding: 5px 12px;
   border-radius: 100px;
 }
@@ -2236,22 +2277,26 @@ html {
 .project-timeline-pill {
   font-size: 12px;
   font-weight: 600;
-  color: #6B7280;
+  color: #E2E8F0;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 4px 12px;
+  border-radius: 100px;
 }
 
 .project-name {
   font-family: var(--font-serif);
   font-size: 26px;
   font-weight: 700;
-  color: #111827;
+  color: #FFFFFF;
   margin-bottom: 12px;
   line-height: 1.3;
 }
 
 .project-description {
-  font-size: 14px;
+  font-size: 14.5px;
   line-height: 1.7;
-  color: #4B5563;
+  color: #94A3B8;
   margin-bottom: 26px;
 }
 
@@ -2259,11 +2304,11 @@ html {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 14px;
-  background: #F9FAFB;
-  border-radius: 12px;
+  background: rgba(10, 15, 27, 0.6);
+  border-radius: 14px;
   padding: 18px;
   margin-bottom: 26px;
-  border: 1px solid #E5E7EB;
+  border: 1px solid rgba(212, 160, 23, 0.2);
 }
 
 .project-meta-item .meta-label {
@@ -2271,7 +2316,7 @@ html {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #B45309;
+  color: #FCD361;
   margin-bottom: 4px;
 }
 
@@ -2279,7 +2324,7 @@ html {
   display: block;
   font-size: 14px;
   font-weight: 600;
-  color: #111827;
+  color: #FFFFFF;
 }
 
 .project-card-footer {
@@ -2290,24 +2335,24 @@ html {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: #FFFFFF;
-  border: 1.5px solid #D1D5DB;
-  color: #111827;
+  background: rgba(212, 160, 23, 0.1);
+  border: 1.5px solid rgba(212, 160, 23, 0.4);
+  color: #FCD361;
   padding: 12px 22px;
   border-radius: 100px;
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
   transition: all var(--transition-smooth);
 }
 
 .project-action-btn:hover {
-  background: #FFFBEB;
-  border-color: #D97706;
-  color: #B45309;
+  background: var(--gold-btn-gradient);
+  border-color: #FCD361;
+  color: #0A0E17;
   transform: translateX(4px);
-  box-shadow: 0 6px 16px rgba(217, 119, 6, 0.12);
+  box-shadow: 0 8px 24px rgba(212, 160, 23, 0.35);
 }
 
 /* --------------------------------------------------------------------------
